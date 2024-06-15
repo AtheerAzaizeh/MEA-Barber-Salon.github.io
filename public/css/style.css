@@ -249,6 +249,92 @@ header {
     font-size: 16px;
 }
 
+.popup3  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup4{
+    position: fixed;
+    top: 50;
+    left: 50;
+    width: 500px;
+    height: 500px;
+    background-color:whitesmoke;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup3-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+    position: relative;
+}
+
+.day {
+    margin-bottom: 20px;
+}
+
+.day h3 {
+    margin-bottom: 10px;
+}
+
+.slot {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slot:hover {
+    background-color: #0056b3;
+}
+
+.popup4-content
+{
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
+input[type="text"] {
+    display: block;
+    width: 80%;
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#confirm-appointment-btn {
+    margin-top: 10px;
+    margin-left: 100px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirm-appointment-btn:hover {
+    background-color: #218838;
+}
 
 /* استعلامات الوسائط للاستجابة */
 @media (max-width: 768px) {
