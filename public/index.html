@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
     <script src="js/scripts.js" defer></script>
     <title>MEA-Barber-Salon</title>
 </head>
+
 <body>
     <header>
         <div id="logo">
-            <span id="logoimg"><img src="images/Logo.png" alt=""></span>
+            <span id="logoimg"><img src="images/Logo.png" alt="Logo"></span>
         </div>
         <div id="title">
             <span id="titletext">MEA-Barber-Salon</span>
@@ -35,49 +37,46 @@
     </header>
     <main>
         <button id="book-now-btn">Appointment Now</button>
-        <div id="popup" class="popup">
+        <section id="popup" class="popup">
             <div class="popup-content">
                 <h2>MEA-Barber-Salon</h2>
-                <img src="images/Logo.png" alt="لوجو الصالون">
+                <div class="logo"><img src="images/Logo.png" alt="Salon Logo"></div>
+                <div class="text">
                 <p>
-                    Making an appointment for the purpose of reserving a place only and not with a commitment to the exact time (we try to keep the wait up to 45 minutes) We make a lot of effort but due to the high demand sometimes there are delays. Thank you for understanding.
+                    Making an appointment for the purpose of reserving a place only and not with a commitment to the exact time (we try to keep the wait up to 45 minutes). We make a lot of effort but due to the high demand sometimes there are delays. Thank you for understanding.
                 </p>
                 <button id="make-appointment-btn">احجز موعداً</button>
             </div>
-        </div>
-        <div id="popup2" class="popup2">
+                
+            </div>
+        </section>
+        <section id ="popup2" class="popup2">
             <div class="popup2-content">
-                <div class="popup2-header">
-                    <button id="close-popup2-btn"><i class="fas fa-arrow-right"></i></button>
                     <div id="popup2-logo">
-                        <img src="images/Logo.png" alt="لوجو الصفحة">
+                        <img src="images/Logo.png" alt="Page Logo">
+                        <button id="close-popup2-btn"><i class="fas fa-arrow-right"></i>
                     </div>
-                </div>
-                <div class="popup2-text">
                     <h2>we haven't met yet</h2>
                     <p>Let's meet 🙏</p>
-                </div>
-                <div class="popup2-form">
                     <input type="tel" id="input-number" placeholder="Enter your number...">
                     <button id="send-btn">Send</button>
-                </div>
             </div>
-        </div>
-        <div id="schedule-popup3" class="popup3">
-            <div class="popup3-content">
+        </section>
+        <section id="schedule-popup" class="popup">
+            <div class="popup-content">
                 <h2>Available Appointments</h2>
                 <div id="schedule"></div>
             </div>
-        </div>
-        <div id="confirmation-popup4" class="popup4">
-            <div class="popup4-content">
+        </section>
+        <section id="confirmation-popup" class="popup">
+            <div class="popup-content">
                 <h2>Confirm Appointment</h2>
                 <p>Please enter your details to confirm the appointment:</p>
                 <input type="text" id="first-name" placeholder="First Name">
                 <input type="text" id="last-name" placeholder="Last Name">
                 <button id="confirm-appointment-btn">Confirm Appointment</button>
             </div>
-        </div>
+        </section>
     </main>
     <footer>
         <div id="location">
@@ -100,27 +99,4 @@
             </a>
         </div>
     </footer>
-    <script>    
-        var sendbtn = document.getElementById("send-btn");
-        sendbtn.addEventListener('click', function() {
-            var phoneNumber = document.getElementById('input-number').value;
-            fetch('/send-verification', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ phoneNumber: phoneNumber })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                alert('Verification code sent successfully.');
-            })
-            .catch(error => {
-                console.error('Error sending verification code:', error);
-                alert('Failed to send verification code. Please try again.');
-            });
-        });
-    </script>
 </body>
-</html>

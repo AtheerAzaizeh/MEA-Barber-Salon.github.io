@@ -1,97 +1,82 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
+
+h2{
+    margin: 1% auto;
+}
+
+button{
+    margin: 0.7%;
+}
+
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../images/background.jpg');
+    background: url('../images/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    position: relative;
 }
 
+/* Header */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     background-color: rgb(250, 225, 225);
-    color: white;
     border-bottom: 1px solid #ccc;
+    width: 100%;
+    position: relative;
+    height: 100px;
+    padding: 8px;
+    justify-content:space-evenly;
 }
 
-#logoimg img {
+
+
+#WhatsAppnumber , #Telnumber{
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+img {
     height: 50px;
+    margin: 0 auto;
 }
 
 #titletext {
     font-size: 24px;
     font-weight: bold;
+    
 }
 
-#contact-info{
-    border: solid 1px;
+#contact-info {
+    gap: 10px;
+    display: flex;
+   
 }
 
-#Telnumber i{
-    margin-bottom: 7px;
-    padding: 5px;
+#contact-info a {
+    color: white;
+    text-decoration: none;
 }
 
-#WhatsAppnumber{
-    padding: 5px;
+#contact-info i {
+    margin-right: 5px;
 }
 
+/* Main */
 main {
     flex: 1;
-}
-
-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 20px;
-    background-color: rgb(250, 225, 225);
-    color: white;
-    border-top: 1px solid #ccc;
-    height: 75px;
-}
-
-#location {
-    display: flex;
-    align-items: center;
-}
-
-#location p {
-    margin-right: 10px;
-    font-size: 14px;
-}
-
-#location img {
-    width: 24px;
-    height: 24px;
-}
-#social-media a {
-    margin: 0 10px;
-}
-
-#social-media img {
-    width: 24px;
-    height: 24px;
-}
-
-main {
-    flex: 1; /* يجعل main يمتد ليملأ المساحة المتبقية في الشاشة */
-    display: flex;
-    justify-content: center; /* يُركز العناصر بشكل أفقي */
-    align-items: center; /* يُركز العناصر بشكل رأسي */
-    padding: 20px; /* هام للتباعد بين الحواف والمحتوى */
+    padding: 20px;
 }
 
 #book-now-btn {
@@ -102,6 +87,8 @@ main {
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    transition: #007bff 0.3s;
+    margin-top: 15%;
 }
 
 #book-now-btn:hover {
@@ -110,84 +97,83 @@ main {
 
 #book-now-btn:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* تأثير تأثير الهوية عند التركيز */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
-
-/* General styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#logoimg img {
-    height: 50px;
-}
-
-#titletext {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-#contact-info {
-    display: flex;
-    align-items: center;
-}
-
-#contact-info a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-}
-
-#popup, #popup2 {
-    position: fixed;
-    top: 50;
-    left: 50;
-    width: 500px;
-    height: 500px;
+/* Popups */
+.popup {
+    margin-right: 20%;
+    margin-left: 20%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    padding: 30px;
 }
 
-.popup-content, .popup2-content {
+.popup2{
+    margin-right: 20%;
+    margin-left: 20%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.popup2-content{
+    background-color: white;
+    padding: 100px;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    overflow-y: auto; /* Added to enable scrolling */
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    max-width: 80%;
+    width: 80%;
+    height: 80%;
     text-align: center;
-    position: relative;
+    overflow-y: auto; /* Added to enable scrolling */
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
-.popup img, .popup2 img {
-    max-width: 100px;
+
+.popup img{
     margin: 20px 0;
 }
 
-.popup p, .popup2 p {
-    font-size: 14px;
-    line-height: 1.6;
+.popup2 img
+{
+   margin-top: -32px;
 }
 
-.popup button {
+.popup2 h2
+{
+    margin: 20px 0px 10px 0px;
+}
+
+.popup p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 10px;
+}
+
+#make-appointment-btn{
     background-color: #007BFF;
     color: white;
     padding: 10px 20px;
@@ -195,6 +181,19 @@ header {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    transition:  0.3s;
+}
+
+#confirm-appointment-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition:  0.3s;
+    margin-top: 30px;
 }
 
 #send-btn{
@@ -205,156 +204,417 @@ header {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    transition:  #007bff 0.3s;
 }
-
-.popup2-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.popup2-header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-#popup2-logo {
-    margin-bottom: 40px; /* يضع اللوجو على اليسار */
-    margin-left: 105px;
-}
-
-.popup2-form {
-    margin-top: 20px; /* تباعد بين العبارة والحقل */
+.popup button:hover,
+#send-btn:hover,
+#confirm-appointment-btn:hover {
+    background-color: #0056b3;
 }
 
 #close-popup2-btn {
-    position: absolute; /* يجعل الزر يمتد عبر الموقف المطلق */
-    top: 0; /* بمعنى انه يظهر في اعلي الزاوية */
-    right: 0; 
-    background-color:white;
+    margin:25px -350px 0px 100px;
+    background-color: white;
     color: #007BFF;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
 }
 
-#input-number{
-    padding: 10px 20px;
-    border: black solid 1px;
-    border-radius: 5px;
-    font-size: 16px;
-}
 
-.popup3  {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+/* Forms */
+input[type="text"] {
+    display: block;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.popup4{
-    position: fixed;
-    top: 50;
-    left: 50;
-    width: 500px;
-    height: 500px;
-    background-color:whitesmoke;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+input[type="tel"]
+{
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.popup3-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
-    text-align: center;
-    position: relative;
+/* Schedule Popup */
+#schedule-popup  {
+    text-align: left;
 }
+
 
 .day {
-    margin-bottom: 20px;
-}
-
-.day h3 {
     margin-bottom: 10px;
 }
 
 .slot {
-    margin: 5px;
-    padding: 10px 20px;
     background-color: #007BFF;
     color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition:  0.3s;
+
 }
 
 .slot:hover {
     background-color: #0056b3;
 }
 
-.popup4-content
-{
-    margin-left: 50px;
-    margin-top: 150px;
+/* Footer */
+footer {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgb(250, 225, 225);
+    border-top: 1px solid #ccc;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
+#location {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 18%;
+}
+
+#location p {
+    font-size: 14px;
+}
+
+#location img {
+    width: 24px;
+    height: 24px;
+}
+
+#social-media{
+    margin-right: 19%;
+}
+
+#social-media a {
+    margin: 0 10px;
+}
+
+#social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (max-width: 750px)
+{
+    /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+h2{
+    margin: 1% auto;
+}
+
+button{
+    margin: 0.7%;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-evenly;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 225, 225);
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    position: relative;
+    height: 100px;
+    padding: 3px;
+    justify-content:space-evenly;
+}
+
+
+
+#WhatsAppnumber , #Telnumber{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+img {
+    height: 50px;
+    margin: 0 auto;
+}
+
+#titletext {
+   display: none;
+    
+}
+
+#contact-info {
+    display: inline-block;
+}
+
+#contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+#contact-info i {
+    margin: 8px;
+}
+
+/* Main */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+}
+
+#book-now-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: #007bff 0.3s;
+    margin-top: 80%;
+}
+
+#book-now-btn:hover {
+    background-color: #0056b3;
+}
+
+#book-now-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Popups */
+.popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.popup2{
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: left;
+    padding: 3px;
+    margin: 20% 0% 50% 0%;
+}
+
+.popup2-content{
+    background-color: white;
+    height: 100%;
+    overflow-y: auto; /* Added to enable scrolling */
+    text-align: left;
+}
+
+.popup-content {
+    background-color: white;
+    text-align: center;
+    overflow-y: auto; /* Added to enable scrolling */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.popup img{
+    margin: 15px 0;
+}
+
+.popup2 img
+{
+   margin-top: -32px;
+}
+
+.popup2 h2
+{
+    width: max-content;
+}
+
+.popup h2
+{
+    display: none;
+}
+
+.popup p {
+    font-size: 9px;
+    margin: 5px;
+}
+
+#make-appointment-btn{
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+#confirm-appointment-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition:  0.3s;
+    margin-top: 30px;
+}
+
+#send-btn{
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition:  #007bff 0.3s;
+}
+.popup button:hover,
+#send-btn:hover,
+#confirm-appointment-btn:hover {
+    background-color: #0056b3;
+}
+
+#close-popup2-btn {
+    background-color: white;
+    color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 80%;
+    
+}
+
+
+
+/* Forms */
 input[type="text"] {
     display: block;
-    width: 80%;
-    margin: 10px 0px;
+    width: 100%;
+    margin-top: 30px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#confirm-appointment-btn {
-    margin-top: 10px;
-    margin-left: 100px;
-    padding: 10px 20px;
-    background-color: #28a745;
+input[type="tel"]
+{
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Schedule Popup */
+#schedule-popup  {
+    text-align: left;
+}
+
+
+.day {
+    margin-bottom: 10px;
+}
+
+.slot {
+    background-color: #007BFF;
     color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition:  0.3s;
+
 }
 
-#confirm-appointment-btn:hover {
-    background-color: #218838;
+.slot:hover {
+    background-color: #0056b3;
 }
 
-/* استعلامات الوسائط للاستجابة */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
+/* Footer */
+footer {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: rgb(250, 225, 225);
+    border-top: 1px solid #ccc;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
 
-    #titletext, #Telnumber {
-        margin-top: 10px;
-    }
+#location {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0px;
+}
 
-    footer {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
+#location p {
+    font-size: 14px;
+}
 
-    #social-media a {
-        margin: 5px 0;
-    }
+#location img {
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+}
+
+#social-media{
+  margin: 11%;
+}
+
+#social-media a {
+    margin: 0 5px;
+}
+
+#social-media img {
+    width: 24px;
+    height: 24px;
+}
+
 }

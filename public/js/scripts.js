@@ -10,6 +10,7 @@ var makeAppointmentBtn = document.getElementById('make-appointment-btn');
 // عند النقر على زر "احجز الآن"
 bookNowBtn.addEventListener('click', function() {
     popup.style.display = 'flex'; // إظهار الصفحة المنبثقة
+    bookNowBtn.style.display = 'none';
 });
 
 // عند النقر على زر "احجز موعداً" داخل الصفحة المنبثقة
@@ -42,36 +43,52 @@ const schedule = {
     "Saturday": []
 };
 
-// Function to generate time slots
+// Function to generate time slots with dates
 function generateTimeSlots() {
     const days = ["Sunday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const startHour = 10;
     const endHour = 22;
     const slotDuration = 45; // in minutes
 
-    days.forEach(day => {
-        let time = new Date();
+    days.forEach((day, index) => {
+        let date = new Date();
+        date.setDate(date.getDate() + (index - date.getDay() + 7) % 7); // Get the next specific day
+
+        let time = new Date(date);
         time.setHours(startHour, 0, 0, 0);
+
+        const dateString = date.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: '2-digit' ,
+            year: '2-digit'
+        });
 
         while (time.getHours() < endHour) {
             const slot = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            schedule[day].push(slot);
+            schedule[day].push({ date: dateString, time: slot });
             time.setMinutes(time.getMinutes() + slotDuration);
         }
     });
 }
 
+
 // Generate the time slots
 generateTimeSlots();
-
+const phoneNumber = document.getElementById('input-number');
 
 document.getElementById("send-btn").addEventListener('click', function() {
-    // Show available slots popup
+   if(phoneNumber.value){
+    popup2.style.display = 'none';
     showAvailableSlots();
+   }
+   else
+   {
+    alert('Please Enter Your Phone Number');
+   }
 });
 
 function showAvailableSlots() {
-    const schedulePopup = document.getElementById("schedule-popup3");
+    const schedulePopup = document.getElementById("schedule-popup");
     const scheduleDiv = document.getElementById("schedule");
     scheduleDiv.innerHTML = '';
 
@@ -79,12 +96,12 @@ function showAvailableSlots() {
         if (schedule.hasOwnProperty(day) && schedule[day].length > 0) {
             const dayDiv = document.createElement('div');
             dayDiv.className = 'day';
-            dayDiv.innerHTML = `<h3>${day}</h3>`;
+            dayDiv.innerHTML = `<h3>${day} - ${schedule[day][0].date}</h3>`;
 
             schedule[day].forEach(slot => {
                 const slotBtn = document.createElement('button');
                 slotBtn.className = 'slot';
-                slotBtn.innerText = slot;
+                slotBtn.innerText = slot.time;
                 slotBtn.addEventListener('click', function() {
                     popup2.style.display = 'none';
                     bookSlot(day , slot);
@@ -98,18 +115,18 @@ function showAvailableSlots() {
         }
     }
 
-    schedulePopup.style.display = 'block';
+    schedulePopup.style.display = 'inline-flex';
 }
 
+
 function showConfirmationPopup(day, slot) {
-    const confirmationPopup = document.getElementById("confirmation-popup4");
+    const confirmationPopup = document.getElementById("confirmation-popup");
     confirmationPopup.style.display = 'block';
 
     document.getElementById("confirm-appointment-btn").addEventListener('click', function() {
         confirmAppointment(day, slot);
     });
 }
-
 
 function confirmAppointment(day, slot) {
     const firstName = document.getElementById("first-name").value;
@@ -138,7 +155,7 @@ function confirmAppointment(day, slot) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert(`You have successfully booked an appointment on ${day} at ${slot}.\nName: ${firstName} ${lastName}`);
+            alert(`You have successfully booked an appointment on ${slot}.\nName: ${firstName} ${lastName}`);
         } else {
             alert('Failed to book appointment.');
         }
@@ -149,8 +166,9 @@ function confirmAppointment(day, slot) {
     });
 
     // Hide confirmation popup
-    document.getElementById("confirmation-popup4").style.display = 'none';
+    document.getElementById("confirmation-popup").style.display = 'none';
 }
+
 function bookSlot(day, slot) {
     // Remove slot from schedule
     const slotIndex = schedule[day].indexOf(slot);
@@ -159,7 +177,7 @@ function bookSlot(day, slot) {
     }
 
     // Hide schedule popup
-    document.getElementById("schedule-popup3").style.display = 'none';
+    document.getElementById("schedule-popup").style.display = 'none';
 }
 
 // Close popup logic
