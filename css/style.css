@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(250, 225, 225);
+    color: white;
+    border-bottom: 1px solid #ccc;
+}
+
+#logoimg img {
+    height: 50px;
+}
+
+#titletext {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#contact-info{
+    border: solid 1px;
+}
+
+#Telnumber i{
+    margin-bottom: 7px;
+    padding: 5px;
+}
+
+#WhatsAppnumber{
+    padding: 5px;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(250, 225, 225);
+    color: white;
+    border-top: 1px solid #ccc;
+    height: 75px;
+}
+
+#location {
+    display: flex;
+    align-items: center;
+}
+
+#location p {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#location img {
+    width: 24px;
+    height: 24px;
+}
+#social-media a {
+    margin: 0 10px;
+}
+
+#social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+main {
+    flex: 1; /* يجعل main يمتد ليملأ المساحة المتبقية في الشاشة */
+    display: flex;
+    justify-content: center; /* يُركز العناصر بشكل أفقي */
+    align-items: center; /* يُركز العناصر بشكل رأسي */
+    padding: 20px; /* هام للتباعد بين الحواف والمحتوى */
+}
+
+#book-now-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#book-now-btn:hover {
+    background-color: #0056b3;
+}
+
+#book-now-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* تأثير تأثير الهوية عند التركيز */
+}
+
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logoimg img {
+    height: 50px;
+}
+
+#titletext {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#contact-info {
+    display: flex;
+    align-items: center;
+}
+
+#contact-info a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+#popup, #popup2 {
+    position: fixed;
+    top: 50;
+    left: 50;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content, .popup2-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+    position: relative;
+}
+
+.popup img, .popup2 img {
+    max-width: 100px;
+    margin: 20px 0;
+}
+
+.popup p, .popup2 p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.popup button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#send-btn{
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup2-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.popup2-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#popup2-logo {
+    margin-bottom: 40px; /* يضع اللوجو على اليسار */
+    margin-left: 105px;
+}
+
+.popup2-form {
+    margin-top: 20px; /* تباعد بين العبارة والحقل */
+}
+
+#close-popup2-btn {
+    position: absolute; /* يجعل الزر يمتد عبر الموقف المطلق */
+    top: 0; /* بمعنى انه يظهر في اعلي الزاوية */
+    right: 0; 
+    background-color:white;
+    color: #007BFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#input-number{
+    padding: 10px 20px;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+/* استعلامات الوسائط للاستجابة */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    #titletext, #Telnumber {
+        margin-top: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    #social-media a {
+        margin: 5px 0;
+    }
+}
